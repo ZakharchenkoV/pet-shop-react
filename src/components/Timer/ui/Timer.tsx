@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './Timer.module.scss';
+
 import { ButtonsBlock } from '../../ButtonsBlock';
+
+import styles from './Timer.module.scss';
 /** 
 Написать таймер который запускается/останавливается при клике на кнопку
 если таймер запущен, то каждую секунду он увеличивается на 1
@@ -53,6 +55,7 @@ export const Timer: React.FC = () => {
       </h1>
       <ButtonsBlock
         firstButton={timerState ? 'Остановить' : 'Пуск'}
+        firstStatus={timerState ? 'negative' : 'positive'}
         firstButtonClickHandler={toggleTimer}
       />
     </div>

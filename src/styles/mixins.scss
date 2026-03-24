@@ -18,6 +18,22 @@
     box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 20%);
     transform: scale(1.05);
   }
+
+  @include mobile {
+    &:hover,
+    &:active {
+      box-shadow: 0 5px 5px -5px rgb(34 60 80 / 60%);
+      transform: none;
+    }
+  }
+
+  @include tablet {
+    &:hover,
+    &:active {
+      box-shadow: 0 5px 5px -5px rgb(34 60 80 / 60%);
+      transform: none;
+    }
+  }
 }
 
 @mixin small-block-hover {
@@ -28,51 +44,124 @@
     box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 20%);
     transform: scale(1.005);
   }
+
+  @include mobile {
+    &:hover,
+    &:active {
+      box-shadow: 0 5px 5px -5px rgb(34 60 80 / 60%);
+      transform: none;
+    }
+  }
+
+  @include tablet {
+    &:hover,
+    &:active {
+      box-shadow: 0 5px 5px -5px rgb(34 60 80 / 60%);
+      transform: none;
+    }
+  }
 }
 
 // buttons
 @mixin button-negative {
+  background-color: lightgrey;
   transition: background-color 0.01s, border 0.01s, transform 0.1s;
 
   &:hover {
     border: 1px solid red;
     background-color: rgb(253 0 0 / 54.6%);
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 
   &:active {
     background-color: rgb(255 35 35);
-    transform: scale(0.95);
+    transform: scale(0.99);
+  }
+
+  @include mobile {
+    &:hover,
+    &:active {
+      border: none;
+      background-color: lightgrey;
+      transform: none;
+    }
+  }
+
+  @include tablet {
+    &:hover,
+    &:active {
+      border: none;
+      background-color: lightgrey;
+      transform: none;
+    }
   }
 }
 
 @mixin button-neutral {
+  background-color: lightgrey;
   transition: background-color 0.01s, border 0.01s, transform 0.1s;
 
   &:hover {
     border: 1px solid rgb(169 169 169);
     background-color: rgb(169 169 169 / 53.4%);
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 
   &:active {
     background-color: rgb(198 198 198);
-    transform: scale(0.95);
+    transform: scale(0.99);
+  }
+
+  @include mobile {
+    &:hover,
+    &:active {
+      border: none;
+      background-color: lightgrey;
+      transform: none;
+    }
+  }
+
+  @include tablet {
+    &:hover,
+    &:active {
+      border: none;
+      background-color: lightgrey;
+      transform: none;
+    }
   }
 }
 
 @mixin button-positive {
+  background-color: lightgrey;
   transition: background-color 0.01s, border 0.01s, transform 0.1s;
 
   &:hover {
     border: 1px solid green;
     background-color: rgb(0 128 0 / 51.3%);
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 
   &:active {
     background-color: rgb(15 126 15);
-    transform: scale(0.95);
+    transform: scale(0.99);
+  }
+
+  @include mobile {
+    &:hover,
+    &:active {
+      border: none;
+      background-color: lightgrey;
+      transform: none;
+    }
+  }
+
+  @include tablet {
+    &:hover,
+    &:active {
+      border: none;
+      background-color: lightgrey;
+      transform: none;
+    }
   }
 }
 
