@@ -1,3 +1,45 @@
+// media-queries
+$breakpoints: (
+  "mobile": 320px,
+  "tablet": 768px,
+  "desktop": 1024px,
+  "wide": 1440px,
+);
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == "tablet" {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == "desktop" {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
 // animations
 @mixin button-hover {
   transition:
@@ -161,48 +203,6 @@
       border: none;
       background-color: lightgrey;
       transform: none;
-    }
-  }
-}
-
-// media-queries
-$breakpoints: (
-  "mobile": 320px,
-  "tablet": 768px,
-  "desktop": 1024px,
-  "wide": 1440px,
-);
-
-@mixin mobile {
-  @media (max-width: 767px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: 768px) and (max-width: 1023px) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: 1024px) {
-    @content;
-  }
-}
-
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == "mobile" {
-    @media (max-width: 767px) {
-      @content;
-    }
-  } @else if $breakpoint == "tablet" {
-    @media (min-width: 768px) and (max-width: 1023px) {
-      @content;
-    }
-  } @else if $breakpoint == "desktop" {
-    @media (min-width: 1024px) {
-      @content;
     }
   }
 }
