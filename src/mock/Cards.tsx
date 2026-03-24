@@ -1,0 +1,130 @@
+import type { ICardItem } from '../components/CardItem/types/CardItem';
+import type { ShopItem } from '../components/CheckboxList/types/CheckboxList';
+
+export const shops: ShopItem[] = [
+  { name: 'Магазин на ул. Геологов, д. 48', id: 1 },
+  { name: 'ул. Авиаторов, 31', id: 2 },
+  { name: "Ателье 'Умка', Сосновый переулок, 10", id: 3 },
+];
+
+export const cards: ICardItem[] = [
+  {
+    id: 0,
+    shopId: 1,
+    name: 'Пицца',
+    remaining: 5,
+    img: 'https://img.freepik.com/free-psd/top-view-delicious-pizza_23-2151868900.jpg?semt=ais_hybrid&w=740&q=80',
+  },
+  {
+    id: 1,
+    shopId: 1,
+    name: 'Паста',
+    remaining: 4,
+    img: 'https://img.freepik.com/premium-photo/pasta-with-tomatoes-basil-is-isolated-white-background_166116-5594.jpg?semt=ais_hybrid&w=740',
+  },
+  {
+    id: 2,
+    shopId: 1,
+    name: 'Суп куриный',
+    remaining: 8,
+    img: 'https://i.pinimg.com/736x/f9/e0/ed/f9e0edeea54cf8474dd94f6cbf80b923.jpg',
+  },
+  {
+    id: 3,
+    shopId: 1,
+    name: 'Пельмени',
+    remaining: 0,
+    img: 'https://avatars.mds.yandex.net/i?id=16f8666fd10a72b715d01953b44e8691_l-5026052-images-thumbs&n=13',
+  },
+  {
+    id: 4,
+    shopId: 1,
+    name: 'Крылышки',
+    remaining: 3,
+    img: 'https://avatars.mds.yandex.net/i?id=921f49d2441d181c03ea0070b8ddef732325b78c-5495613-images-thumbs&n=13',
+  },
+  {
+    id: 5,
+    shopId: 1,
+    name: 'Бургер',
+    remaining: 6,
+    img: 'https://img.freepik.com/free-photo/tasty-burger-isolated-white-background_123827-29719.jpg',
+  },
+  {
+    id: 6,
+    shopId: 1,
+    name: 'Суши',
+    remaining: 10,
+    img: 'https://img.freepik.com/free-photo/sushi-set-isolated-white-background_123827-21002.jpg',
+  },
+  {
+    id: 7,
+    shopId: 1,
+    name: 'Рамен',
+    remaining: 2,
+    img: 'https://img.freepik.com/free-photo/ramen-noodle-soup-isolated-white-background_123827-21635.jpg',
+  },
+  {
+    id: 8,
+    shopId: 1,
+    name: 'Стейк',
+    remaining: 4,
+    img: 'https://img.freepik.com/free-photo/grilled-beef-steak-isolated-white-background_123827-29564.jpg',
+  },
+  {
+    id: 9,
+    shopId: 2,
+    name: 'Салат Цезарь',
+    remaining: 7,
+    img: 'https://img.freepik.com/free-photo/caesar-salad-isolated-white-background_123827-21601.jpg',
+  },
+  {
+    id: 10,
+    shopId: 3,
+    name: 'Шаурма',
+    remaining: 5,
+    img: 'https://img.freepik.com/free-photo/shawarma-isolated-white-background_123827-21471.jpg',
+  },
+  {
+    id: 11,
+    shopId: 2,
+    name: 'Лазанья',
+    remaining: 3,
+    img: 'https://img.freepik.com/free-photo/lasagna-isolated-white-background_123827-21545.jpg',
+  },
+  {
+    id: 12,
+    shopId: 3,
+    name: 'Ризотто',
+    remaining: 6,
+    img: 'https://img.freepik.com/free-photo/risotto-isolated-white-background_123827-21817.jpg',
+  },
+  {
+    id: 13,
+    shopId: 2,
+    name: 'Тако',
+    remaining: 9,
+    img: 'https://img.freepik.com/free-photo/taco-isolated-white-background_123827-21459.jpg',
+  },
+  {
+    id: 14,
+    shopId: 3,
+    name: 'Омлет',
+    remaining: 8,
+    img: 'https://img.freepik.com/free-photo/omelette-isolated-white-background_123827-21722.jpg',
+  },
+  {
+    id: 15,
+    shopId: 2,
+    name: 'Блины',
+    remaining: 0,
+    img: 'https://img.freepik.com/free-photo/pancakes-isolated-white-background_123827-21657.jpg',
+  },
+  {
+    id: 16,
+    shopId: 3,
+    name: 'Тирамису',
+    remaining: 5,
+    img: 'https://img.freepik.com/free-photo/tiramisu-isolated-white-background_123827-21586.jpg',
+  },
+];

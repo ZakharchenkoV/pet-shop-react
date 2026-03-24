@@ -1,0 +1,119 @@
+// animations
+@mixin button-hover {
+  transition:
+    border 0.1s,
+    transform 0.3s;
+
+  &:hover {
+    border: 1px solid rgb(196 196 196);
+    transform: scale(1.005);
+  }
+}
+
+@mixin block-hover {
+  box-shadow: 0 5px 5px -5px rgb(34 60 80 / 60%);
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 20%);
+    transform: scale(1.05);
+  }
+}
+
+@mixin small-block-hover {
+  box-shadow: 0 5px 5px -5px rgb(34 60 80 / 60%);
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 20%);
+    transform: scale(1.005);
+  }
+}
+
+// buttons
+@mixin button-negative {
+  transition: background-color 0.01s, border 0.01s, transform 0.1s;
+
+  &:hover {
+    border: 1px solid red;
+    background-color: rgb(253 0 0 / 54.6%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: rgb(255 35 35);
+    transform: scale(0.95);
+  }
+}
+
+@mixin button-neutral {
+  transition: background-color 0.01s, border 0.01s, transform 0.1s;
+
+  &:hover {
+    border: 1px solid rgb(169 169 169);
+    background-color: rgb(169 169 169 / 53.4%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: rgb(198 198 198);
+    transform: scale(0.95);
+  }
+}
+
+@mixin button-positive {
+  transition: background-color 0.01s, border 0.01s, transform 0.1s;
+
+  &:hover {
+    border: 1px solid green;
+    background-color: rgb(0 128 0 / 51.3%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: rgb(15 126 15);
+    transform: scale(0.95);
+  }
+}
+
+// media-queries
+$breakpoints: (
+  "mobile": 320px,
+  "tablet": 768px,
+  "desktop": 1024px,
+  "wide": 1440px,
+);
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == "tablet" {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == "desktop" {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}

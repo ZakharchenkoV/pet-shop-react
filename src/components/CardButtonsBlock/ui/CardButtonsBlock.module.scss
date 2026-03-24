@@ -1,0 +1,99 @@
+@use "../../../styles//mixins.scss" as mixins;
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  button {
+    position: relative;
+    display: flex;
+    width: max-content;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @include mixins.button-hover;
+  }
+}
+
+.buttons-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  button {
+    width: 50px;
+    height: max-content;
+    border: none;
+    transition:
+      background-color 0.3s,
+      transform 0.3s;
+    background-color: rgb(136 173 243);
+
+    &:first-child {
+      border-radius: 5px 2px 2px 5px;
+
+      &:disabled {
+        background-color: rgb(231 231 231);
+      }
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &:last-child {
+      border-radius: 2px 5px 5px 2px;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &:hover {
+      border: none;
+      background-color: rgb(71 124 223);
+    }
+  }
+}
+
+.button {
+  &-reset,
+  &-submit {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    transition:
+      background-color 0.3s,
+      transform 0.3s;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: rgb(231 231 231);
+    }
+  }
+}
+
+.counter-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+
+  &:focus {
+    border: none;
+    background-color: rgb(214 228 255);
+  }
+}
+
+.notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

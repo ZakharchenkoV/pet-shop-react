@@ -1,0 +1,27 @@
+// button {
+//   background: none;
+// }
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  cursor: pointer;
+  margin: 0 auto;
+  border: none;
+  border-radius: 5px;
+  width: max-content;
+  height: 100%;
+
+  &:disabled {
+    background-color: rgb(231 231 231);
+  }
+}
+
+.counters-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
