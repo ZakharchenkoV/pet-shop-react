@@ -1,19 +1,21 @@
-// button {
-//   background: none;
-// }
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
 button {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition:
-    background-color 0.3s,
-    transform 0.3s;
-  cursor: pointer;
+  width: max-content;
+  height: 100%;
   margin: 0 auto;
   border: none;
   border-radius: 5px;
-  width: max-content;
-  height: 100%;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
   &:disabled {
     background-color: rgb(231 231 231);
@@ -24,4 +26,28 @@ button {
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding: 20px;
+}
+
+.double-blocks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-top: 1px solid #eee;
 }

@@ -1,6 +1,15 @@
 @use "../../../styles/mixins.scss" as mixins;
 
 // Планшеты
+@include mixins.mobile {
+  .card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+// Планшеты
 @include mixins.tablet {
   .card-items {
     display: grid;
