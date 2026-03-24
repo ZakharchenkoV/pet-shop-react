@@ -1,5 +1,7 @@
 import React from 'react';
+
 import classnames from 'classnames';
+
 import type { IButtonsProps } from '../types/ButtonsBlock';
 
 import styles from './ButtonsBlock.module.scss';

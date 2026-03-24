@@ -1,7 +1,9 @@
-import styles from './CardItem.module.scss';
-import type { ICardItem } from '../types/CardItem';
 import React from 'react';
+
 import { CardButtonsBlock } from '../../CardButtonsBlock';
+import type { ICardItem } from '../types/CardItem';
+
+import styles from './CardItem.module.scss';
 
 export const CardItem: React.FC<ICardItem> = ({ name, img, remaining }) => {
   return (

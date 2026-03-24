@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import styles from './CardButtonsBlock.module.scss';
+
 import type { ICardButtonsBlock } from '../types/CardButtonsBlock';
+
+import styles from './CardButtonsBlock.module.scss';
 
 export const CardButtonsBlock: React.FC<ICardButtonsBlock> = ({
   leftButtonName,

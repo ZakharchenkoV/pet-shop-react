@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
-import styles from './CardItems.module.scss';
-import type { CardItemsProps } from '../types/CardItems';
+
 import { CardItem } from '../../CardItem/ui/CardItem';
+import type { CardItemsProps } from '../types/CardItems';
+
+import styles from './CardItems.module.scss';
 
 export const CardItems: React.FC<CardItemsProps> = ({
   cards,

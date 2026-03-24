@@ -1,7 +1,9 @@
 import { Component } from 'react';
-import styles from './ClassCounter.module.scss';
-import type { State } from '../types/ClassCounter';
+
 import { ButtonsBlock } from '../../ButtonsBlock';
+import type { State } from '../types/ClassCounter';
+
+import styles from './ClassCounter.module.scss';
 
 // Классовые компоненты - устаревший подход, но в проектах втретиться могут, поэтому об их существовании необъодимо знать.
 // Сейчас рекомендуется использовать функциональные компоненты и хуки.
@@ -11,17 +13,15 @@ export class ClassCounter extends Component<object, State> {
     this.state = {
       count: 0,
     };
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
   }
 
-  increment() {
+  increment = () => {
     this.setState((prev: { count: number }) => ({ count: prev.count + 1 }));
-  }
+  };
 
-  decrement() {
+  decrement = () => {
     this.setState((prev: { count: number }) => ({ count: prev.count - 1 }));
-  }
+  };
 
   render() {
     return (
