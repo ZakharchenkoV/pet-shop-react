@@ -84,7 +84,7 @@ export const CardButtonsBlock: React.FC<ICardButtonsBlock> = ({
         type="submit"
         form="counter"
       >
-        Отправить
+        В корзину
       </button>
       <button
         className={styles['button-reset']}
