@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import './index.scss';
 import { AccountPage } from './pages/AccountPage';
@@ -8,9 +9,6 @@ import { CatalogPage } from './pages/CatalogPage';
 import { HomePage } from './pages/HomePage';
 
 const App = () => {
-  const date = new Date();
-  const footerDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}г.`;
-
   return (
     <>
       <Header />
@@ -22,9 +20,7 @@ const App = () => {
           <Route path="/account" element={<AccountPage />} />
         </Routes>
       </main>
-      <footer>
-        <p>{footerDate}</p>
-      </footer>
+      <Footer />
     </>
   );
 };

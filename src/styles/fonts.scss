@@ -1,0 +1,9 @@
+@mixin light-red {
+  color: rgb(224 0 0 / 35%);
+  font-size: 12px;
+}
+
+@mixin light-grey {
+  color: rgb(106 106 106);
+  font-size: 14px;
+}
