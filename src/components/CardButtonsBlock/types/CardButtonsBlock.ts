@@ -1,4 +1,11 @@
 export interface ICardButtonsBlock {
-  leftButtonName: string;
-  rightButtonName: string;
+  id: number;
+  shopId: number;
+  name: string;
+  img: string;
+  remaining: number;
+  description: string;
+  price: number;
+  // leftButtonName: string;
+  // rightButtonName: string;
 }

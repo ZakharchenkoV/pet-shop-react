@@ -61,20 +61,20 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   const value = useMemo(
     () => ({
       items,
+      totalItems,
+      totalPrice,
       addToCart,
       removeFromCart,
       updateQuantity,
       clearCart,
-      totalItems,
-      totalPrice,
     }),
     [
-      addToCart,
-      clearCart,
       items,
-      removeFromCart,
       totalItems,
       totalPrice,
+      addToCart,
+      clearCart,
+      removeFromCart,
       updateQuantity,
     ]
   );
