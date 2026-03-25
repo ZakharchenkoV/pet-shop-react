@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import logo from '../../../assets/logo.svg';
@@ -12,21 +11,9 @@ export const Header: React.FC = () => {
   const onCartClick = () => {};
   const onAccountlick = () => {};
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-  const navigate = useNavigate();
-
-  const handleLogoClick = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    navigate('/');
-  };
-
   return (
     <header>
-      <Link
-        to={'/'}
-        className={styles['header_left-icon']}
-        onClick={handleLogoClick}
-      >
+      <Link to={'/'} className={styles['header_left-icon']}>
         <img src={logo} alt="Мой магазин" className={styles['logo-icon']} />
         <h2 className={styles['title']}>Мой магазин</h2>
       </Link>

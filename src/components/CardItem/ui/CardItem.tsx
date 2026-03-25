@@ -5,12 +5,18 @@ import type { ICardItem } from '../types/CardItem';
 
 import styles from './CardItem.module.scss';
 
-export const CardItem: React.FC<ICardItem> = ({ name, img, remaining }) => {
+export const CardItem: React.FC<ICardItem> = ({
+  name,
+  img,
+  remaining,
+  price,
+}) => {
   return (
     <>
       <div className={styles['card-wrapper']}>
         <img className={styles['card-image']} src={img} loading="lazy" />
         <h3 className={styles['card-header']}>{name}</h3>
+        <p>{`${price} ₽`}</p>
         {remaining ? (
           <CardButtonsBlock leftButtonName="-" rightButtonName="+" />
         ) : (
