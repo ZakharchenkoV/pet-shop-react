@@ -46,7 +46,7 @@ export const cards: ICardItem[] = [
       'Домашние пельмени из нежного теста с сочной начинкой из говядины и свинины. Подаются со сметаной и зеленью.',
     price: 1000,
     remaining: 0,
-    img: 'https://avatars.mds.yandex.net/i?id=16f8666fd10a72b715d01953b44e8691_l-5026052-images-thumbs&n=13',
+    img: 'https://poznaya-n1.ru/wp-content/uploads/2020/04/photo-2025-06-07-19-36-26.jpg',
   },
   {
     id: 4,
@@ -66,17 +66,17 @@ export const cards: ICardItem[] = [
       'Сочная говяжья котлета, свежий салат, помидоры, красный лук, соленые огурцы и фирменный соус в мягкой булочке с кунжутом.',
     price: 1000,
     remaining: 6,
-    img: 'https://img.freepik.com/free-photo/tasty-burger-isolated-white-background_123827-29719.jpg',
+    img: 'https://png.pngtree.com/png-clipart/20230520/original/pngtree-beef-burger-png-image_9165585.png',
   },
   {
     id: 6,
     shopId: 1,
-    name: 'Суши',
+    name: 'Суши не на выбор',
     description:
       'Ассорти из классических суши: лосось, тунец, угорь, огурец, авокадо. Свежая рыба и идеально сваренный рис.',
     price: 1000,
     remaining: 10,
-    img: 'https://img.freepik.com/free-photo/sushi-set-isolated-white-background_123827-21002.jpg',
+    img: 'https://static.vecteezy.com/system/resources/thumbnails/046/337/870/small_2x/sushi-on-plate-delicious-japanese-cuisine-sushi-sushi-top-view-isolated-makizushi-rolled-sushi-isolated-on-plate-flat-lay-free-png.png',
   },
   {
     id: 7,
@@ -86,7 +86,7 @@ export const cards: ICardItem[] = [
       'Японский суп с пшеничной лапшой, свининой чашу, половинкой яйца, нори и зеленым луком. Богатый и ароматный бульон.',
     price: 1000,
     remaining: 2,
-    img: 'https://img.freepik.com/free-photo/ramen-noodle-soup-isolated-white-background_123827-21635.jpg',
+    img: 'https://static.vecteezy.com/system/resources/previews/048/725/359/non_2x/asian-noodle-soup-ramen-with-a-mix-of-traditional-toppings-isolated-on-transparent-background-free-png.png',
   },
   {
     id: 8,
@@ -96,7 +96,7 @@ export const cards: ICardItem[] = [
       'Мраморная говядина, обжаренная на гриле до идеальной степени прожарки. Подается с картофелем и соусом демиглас.',
     price: 1000,
     remaining: 4,
-    img: 'https://img.freepik.com/free-photo/grilled-beef-steak-isolated-white-background_123827-29564.jpg',
+    img: 'https://88888.kz/images/!Cafe888/СТЕЙКИ/Нью%20Йорк.jpg',
   },
   {
     id: 9,
@@ -106,7 +106,7 @@ export const cards: ICardItem[] = [
       'Классический салат с куриным филе, листьями романо, пармезаном, гренками и соусом Цезарь. Сытный и вкусный.',
     price: 1000,
     remaining: 7,
-    img: 'https://img.freepik.com/free-photo/caesar-salad-isolated-white-background_123827-21601.jpg',
+    img: 'https://main-cdn.sbermegamarket.ru/big1/hlr-system/-10/501/727/914/191/752/100031533421b0.jpg',
   },
   {
     id: 10,
@@ -126,7 +126,7 @@ export const cards: ICardItem[] = [
       'Итальянская запеканка из слоев пасты, мясного соуса болоньезе, соуса бешамель и пармезана.',
     price: 1000,
     remaining: 3,
-    img: 'https://img.freepik.com/free-photo/lasagna-isolated-white-background_123827-21545.jpg',
+    img: 'https://img.pravda.ru/image/preview/article/3/9/0/2277390_amp.jpeg',
   },
   {
     id: 12,
@@ -136,7 +136,7 @@ export const cards: ICardItem[] = [
       'Кремовое ризотто с грибами, пармезаном и трюфельным маслом. Нежный и насыщенный вкус.',
     price: 1000,
     remaining: 6,
-    img: 'https://img.freepik.com/free-photo/risotto-isolated-white-background_123827-21817.jpg',
+    img: 'https://static.vecteezy.com/system/resources/previews/052/241/812/non_2x/aromatic-risotto-clipart-with-rich-creamy-rice-texture-free-png.png',
   },
   {
     id: 13,
@@ -146,7 +146,7 @@ export const cards: ICardItem[] = [
       'Мексиканские лепешки из кукурузной муки с начинкой из говядины, сальсы, авокадо и кинзы.',
     price: 1000,
     remaining: 9,
-    img: 'https://img.freepik.com/free-photo/taco-isolated-white-background_123827-21459.jpg',
+    img: 'https://png.pngtree.com/png-clipart/20231020/original/pngtree-mexican-tacos-on-plate-on-tablecloth-png-image_13377140.png',
   },
   {
     id: 14,
@@ -156,7 +156,7 @@ export const cards: ICardItem[] = [
       'Пышный омлет из трех яиц с молоком, подается с зеленью и томатами черри. Идеальный завтрак.',
     price: 1000,
     remaining: 8,
-    img: 'https://img.freepik.com/free-photo/omelette-isolated-white-background_123827-21722.jpg',
+    img: 'https://cdn.food.ru/unsigned/fit/640/480/ce/0/czM6Ly9tZWRpYS9waWN0dXJlcy8yMDIzMTAxOC8zUHUyZEQuanBlZw.jpg',
   },
   {
     id: 15,
@@ -166,7 +166,7 @@ export const cards: ICardItem[] = [
       'Тонкие блины по домашнему рецепту. Подаются со сгущенкой, вареньем или сметаной на выбор.',
     price: 1000,
     remaining: 0,
-    img: 'https://img.freepik.com/free-photo/pancakes-isolated-white-background_123827-21657.jpg',
+    img: 'https://avatars.mds.yandex.net/i?id=16158165ddb39f96ca975471bbe66e51_l-8960812-images-thumbs&ref=rim&n=13&w=534&h=534',
   },
   {
     id: 16,
@@ -176,6 +176,6 @@ export const cards: ICardItem[] = [
       'Классический итальянский десерт из печенья савоярди, пропитанного кофе, с нежным сыром маскарпоне и какао.',
     price: 1000,
     remaining: 5,
-    img: 'https://img.freepik.com/free-photo/tiramisu-isolated-white-background_123827-21586.jpg',
+    img: 'https://cdn.food.ru/unsigned/fit/640/480/ce/0/czM6Ly9tZWRpYS9waWN0dXJlcy8yMDI1MDYyNi8zOTdqdkcuanBlZw.jpg',
   },
 ];

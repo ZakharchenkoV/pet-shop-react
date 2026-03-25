@@ -9,20 +9,24 @@ export const CardItem: React.FC<ICardItem> = ({
   name,
   img,
   remaining,
+  description,
   price,
 }) => {
   return (
     <>
-      <div className={styles['card-wrapper']}>
-        <img className={styles['card-image']} src={img} loading="lazy" />
-        <h3 className={styles['card-header']}>{name}</h3>
+      <article className={styles['card-wrapper']}>
+        <div className={styles['card-info']}>
+          <img className={styles['card-image']} src={img} loading="lazy" />
+          <h3 className={styles['card-header']}>{name}</h3>
+          <p>{description}</p>
+        </div>
         <p>{`${price} ₽`}</p>
         {remaining ? (
           <CardButtonsBlock leftButtonName="-" rightButtonName="+" />
         ) : (
           <h4 className={styles['card__out-of-stock']}>Товара нет в наличии</h4>
         )}
-      </div>
+      </article>
     </>
   );
 };

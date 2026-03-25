@@ -1,6 +1,12 @@
 @use "../../../styles/mixins.scss" as mixins;
 
 .card {
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &-wrapper {
     display: flex;
     gap: 5px;
@@ -9,6 +15,7 @@
     border-radius: 20px;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
     @include mixins.block-hover;
   }
@@ -21,8 +28,8 @@
   }
 
   &-image {
-    width: 90%;
-    height: 90%;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
     aspect-ratio: 1 / 1;
   }
