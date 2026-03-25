@@ -4,6 +4,7 @@ export interface ICardItem {
   name: string;
   price: number;
   description: string;
-  remaining: number;
+  quantity: number; // кол-во в корзине
+  remaining: number; // остаток "на складе"
   img: string;
 }
