@@ -1,5 +1,6 @@
 import type { ShopItem, ShopListProps } from '../types/CheckboxList';
 
+import styles from './CheckboxList.module.scss';
 /*
   Необходимо реализовать паттерн "выделить все":
 
@@ -45,7 +46,7 @@ export const CheckboxList = (props: ShopListProps) => {
           // ниже передаем булево значение чекбокса(выбран/не выбран)
           onChange={(event) => handlerCheckAll(event.target.checked)}
         />
-        Выделить все
+        Показать весь каталог
       </label>
     </li>
   );
@@ -66,9 +67,9 @@ export const CheckboxList = (props: ShopListProps) => {
   );
 
   return (
-    <ul className="checkbox-list">
+    <ul className={styles['checkbox-list']}>
       {checkAll}
-      <li className="checkbox-list-separator" />
+      <li className={styles['checkbox-list-separator']} />
       {shops.map(renderItem)}
     </ul>
   );
