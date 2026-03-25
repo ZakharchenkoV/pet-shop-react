@@ -14,12 +14,10 @@
   border-top: 1px solid #eee;
   box-sizing: border-box;
 
-  section {
-    p {
-      margin: 0;
-      font-weight: 700;
+  p {
+    margin: 0;
+    font-weight: 700;
 
-      @include font.light-red;
-    }
+    @include font.light-red;
   }
 }
