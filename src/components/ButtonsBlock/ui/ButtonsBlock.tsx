@@ -2,6 +2,7 @@ import React from 'react';
 
 import classnames from 'classnames';
 
+import { Button } from '../../Button/ui/Button';
 import type { IButtonsProps } from '../types/ButtonsBlock';
 
 import styles from './ButtonsBlock.module.scss';
@@ -21,27 +22,17 @@ export const ButtonsBlock: React.FC<IButtonsProps> = ({
         [styles['alone']]: !secondButton,
       })}
     >
-      <button
-        className={classnames(styles['button'], {
-          [styles['negative']]: firstStatus === 'negative',
-          [styles['neutral']]: firstStatus === 'neutral',
-          [styles['positive']]: firstStatus === 'positive',
-        })}
-        onClick={firstButtonClickHandler}
-      >
-        {firstButton}
-      </button>
-      {secondButton && (
-        <button
-          className={classnames(styles['button'], {
-            [styles['negative']]: secondStatus === 'negative',
-            [styles['neutral']]: secondStatus === 'neutral',
-            [styles['positive']]: secondStatus === 'positive',
-          })}
-          onClick={secondButtonClickHandler}
-        >
-          {secondButton}
-        </button>
+      <Button
+        label={firstButton}
+        status={firstStatus}
+        buttonClickHandler={firstButtonClickHandler}
+      />
+      {secondButton && secondStatus && secondButtonClickHandler && (
+        <Button
+          label={secondButton}
+          status={secondStatus}
+          buttonClickHandler={secondButtonClickHandler}
+        />
       )}
     </div>
   );

@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import './index.scss';
 import { AccountPage } from './pages/AccountPage';
-import { CartPage } from './pages/CartPage';
+import { CartPage } from './pages/CartPage/CartPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { HomePage } from './pages/HomePage';
 

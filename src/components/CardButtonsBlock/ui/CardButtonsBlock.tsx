@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { useCart } from '../../../store/cart';
+import { useCart } from '../../../store';
 import type { ICardButtonsBlock } from '../types/CardButtonsBlock';
 
 import styles from './CardButtonsBlock.module.scss';

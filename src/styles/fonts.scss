@@ -7,3 +7,9 @@
   color: rgb(106 106 106);
   font-size: 14px;
 }
+
+@mixin empty-content-message {
+  color: rgb(255 255 255);
+  font-weight: 400;
+  text-shadow: 2px 2px rgb(30 39 93);
+}

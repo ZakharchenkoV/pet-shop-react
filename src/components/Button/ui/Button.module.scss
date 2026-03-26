@@ -1,0 +1,15 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.button {
+  &.negative {
+    @include mixins.button-negative;
+  }
+
+  &.neutral {
+    @include mixins.button-neutral;
+  }
+
+  &.positive {
+    @include mixins.button-positive;
+  }
+}
