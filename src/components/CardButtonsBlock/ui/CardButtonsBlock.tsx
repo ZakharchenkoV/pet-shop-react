@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
+// import minusIcon from '../../../assets/minus.svg';
+// import plusIcon from '../../../assets/plus.svg';
 import { useCart } from '../../../store';
+import { Button } from '../../Button/ui/Button';
 import type { ICardButtonsBlock } from '../types/CardButtonsBlock';
 
 import styles from './CardButtonsBlock.module.scss';
@@ -12,108 +15,74 @@ export const CardButtonsBlock: React.FC<ICardButtonsBlock> = ({
   price,
   img,
   remaining,
-  // description,
-}) =>
-  // {
-  // leftButtonName,
-  // rightButtonName,
-  // }
-  {
-    // const [counter, setCounter] = useState(0);
+}) => {
+  const { addToCart, removeOneFromCart, removeFromCart, items } = useCart();
 
-    // const [divClicked] = useState(true);
-    // const [text, setText] = useState<string>('');
+  const getQuantity = useCallback(
+    (itemId: number) => {
+      const currentItem = items.find((item) => item.id === itemId);
+      return currentItem?.quantity;
+    },
+    [items]
+  );
 
-    // Обработчик отображения выполненного действия
-    // const buttonClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-    //   const content =
-    //     event.currentTarget.textContent === 'Обнулить счетчик'
-    //       ? 'Счетчик обнулен'
-    //       : `Нажата кнопка ${event.currentTarget.textContent ?? ''}`;
-    //   setText(content);
-    // };
-
-    // // Обработчик нажатия на +
-    // const onPlusClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-    //   setCounter((prev) => prev + 1);
-    // };
-
-    // // Обработчик нажатия на -
-    // const onMinusClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-    //   setCounter((prev) => Math.max(prev - 1, 0));
-    // };
-
-    // // Обработчик обнуления счетчика
-    // const resetCounter: React.MouseEventHandler<HTMLButtonElement> = () => {
-    //   setTimeout(() => {
-    //     setCounter(0);
-    //     // setText('Счетчик обнулен');
-    //   }, 500);
-    // };
-
-    // const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //   const value = Number(e.target.value);
-
-    //   if (!Number.isNaN(value)) {
-    //     setCounter(value);
-    //   }
-    // };
-
-    const { addToCart, items } = useCart();
-
-    const handleAddToCart = () => {
-      addToCart({ id, shopId, name, price, img, remaining });
-    };
-
-    useEffect(() => {
-      console.log('Корзина обновлена:', items);
-    }, [items]);
-
-    return (
-      <div className={styles['buttons-wrapper']}>
-        {/* <div className={styles['buttons-block']}>
-        <button
-          className={styles['buttons-block__button-minus']}
-          onClick={onMinusClick}
-          disabled={!counter}
-        >
-          {leftButtonName}
-        </button>
-        <form id="counter">
-          <input
-            type="number"
-            id="counter"
-            min={0}
-            value={counter}
-            className={styles['counter-input']}
-            onChange={onInputChange}
-          ></input>
-        </form>
-        <button
-          className={styles['buttons-block__button-plus']}
-          onClick={onPlusClick}
-        >
-          {rightButtonName}
-        </button>
-      </div> */}
-
-        {/* {divClicked && <div className={styles.notice}>{text}</div>} */}
-        <button
-          className={styles['button-submit']}
-          onClick={handleAddToCart}
-          // disabled={!counter}
-          type="submit"
-          form="counter"
-        >
-          В корзину
-        </button>
-        {/* <button
-          className={styles['button-reset']}
-          onClick={resetCounter}
-          disabled={!counter}
-        >
-          Обнулить счетчик
-        </button> */}
-      </div>
-    );
+  const handleAddToCart = () => {
+    addToCart({ id, shopId, name, price, img, remaining });
   };
+
+  // Проверка, есть ли уже товар в корзине
+  const searchItemInCart = (itemId: number) => {
+    return items.find((item) => item.id === itemId);
+  };
+
+  // Обработчик нажатия на +
+  const onPlusClick = () => {
+    handleAddToCart();
+  };
+
+  // Обработчик нажатия на -
+  const onMinusClick = () => {
+    removeOneFromCart({ id, shopId, name, price, img, remaining });
+  };
+
+  useEffect(() => {
+    if (getQuantity(id) === 0) {
+      removeFromCart(id);
+    }
+  }, [getQuantity, id, removeFromCart]);
+
+  return (
+    <div className={styles['buttons-wrapper']}>
+      {!searchItemInCart(id) && (
+        <Button
+          label="В корзину"
+          status="neutral"
+          buttonClickHandler={handleAddToCart}
+          style={{
+            width: '100%',
+            height: '50px',
+            borderRadius: '25px',
+          }}
+        />
+      )}
+
+      {searchItemInCart(id) && getQuantity(id) !== 0 && (
+        <div className={styles['buttons-block']}>
+          <Button
+            label="-"
+            status="negative"
+            buttonClickHandler={onMinusClick}
+            style={{ borderRadius: '25px' }}
+          />
+          <>{getQuantity(id)}</>
+          <Button
+            label="+"
+            status="positive"
+            buttonClickHandler={onPlusClick}
+            style={{ borderRadius: '25px' }}
+          />
+        </div>
+      )}
+    </div>
+  );
+};

@@ -6,6 +6,4 @@ export interface ICardButtonsBlock {
   remaining: number;
   description: string;
   price: number;
-  // leftButtonName: string;
-  // rightButtonName: string;
 }

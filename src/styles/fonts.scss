@@ -13,3 +13,8 @@
   font-weight: 400;
   text-shadow: 2px 2px rgb(30 39 93);
 }
+
+@mixin font-description {
+  font-size: 14px;
+  font-weight: 300;
+}

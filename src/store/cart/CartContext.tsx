@@ -28,6 +28,25 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     });
   }, []);
 
+  const removeOneFromCart = useCallback(
+    (newItem: Omit<CartItem, 'quantity'>) => {
+      setItems((prev) => {
+        const existing = prev.find((el) => el.id === newItem.id);
+
+        if (existing) {
+          return prev.map((item) =>
+            item.id === newItem.id
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          );
+        }
+
+        return [...prev, { ...newItem, quantity: 1 }];
+      });
+    },
+    []
+  );
+
   const removeFromCart = useCallback((itemId: number) => {
     setItems((prev) => prev.filter((item) => item.id !== itemId));
   }, []);
@@ -64,9 +83,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
       totalItems,
       totalPrice,
       addToCart,
-      removeFromCart,
-      updateQuantity,
       clearCart,
+      updateQuantity,
+      removeFromCart,
+      removeOneFromCart,
     }),
     [
       items,
@@ -74,8 +94,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
       totalPrice,
       addToCart,
       clearCart,
-      removeFromCart,
       updateQuantity,
+      removeFromCart,
+      removeOneFromCart,
     ]
   );
 
