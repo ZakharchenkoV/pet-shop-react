@@ -25,9 +25,10 @@ export const CardItems: React.FC<CardItemsProps> = ({
             shopId={card.shopId}
             name={card.name}
             description={card.description}
+            remaining={card.remaining}
             price={card.price}
             img={card.img}
-            remaining={card.remaining}
+            quantity={card.quantity}
           />
         ))}
     </div>

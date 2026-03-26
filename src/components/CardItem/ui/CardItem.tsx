@@ -6,6 +6,8 @@ import type { ICardItem } from '../types/CardItem';
 import styles from './CardItem.module.scss';
 
 export const CardItem: React.FC<ICardItem> = ({
+  id,
+  shopId,
   name,
   img,
   remaining,
@@ -18,11 +20,19 @@ export const CardItem: React.FC<ICardItem> = ({
         <div className={styles['card-info']}>
           <img className={styles['card-image']} src={img} loading="lazy" />
           <h3 className={styles['card-header']}>{name}</h3>
-          <p>{description}</p>
+          <p className={styles['card-description']}>{description}</p>
         </div>
         <p>{`${price} ₽`}</p>
         {remaining ? (
-          <CardButtonsBlock leftButtonName="-" rightButtonName="+" />
+          <CardButtonsBlock
+            name={name}
+            id={id}
+            shopId={shopId}
+            price={price}
+            img={img}
+            remaining={remaining}
+            description={description}
+          />
         ) : (
           <h4 className={styles['card__out-of-stock']}>Товара нет в наличии</h4>
         )}
