@@ -18,4 +18,8 @@
 
     @include mixins.button-positive;
   }
+
+  &.disabled {
+    @include mixins.button-disabled;
+  }
 }

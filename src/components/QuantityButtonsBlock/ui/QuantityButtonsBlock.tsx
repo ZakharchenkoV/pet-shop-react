@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import { useCart } from '../../../store';
 import { Button } from '../../Button/ui/Button';
@@ -38,6 +38,10 @@ export const QuantityButtonsBlock: React.FC<ICardButtonsBlock> = ({
     }
   }, [getQuantity, id, removeFromCart]);
 
+  const disablePlusButton = useMemo(() => {
+    return getQuantity(id) === remaining;
+  }, [getQuantity, id, remaining]);
+
   return (
     <div className={styles['quantity-buttons-block']}>
       <Button
@@ -50,6 +54,7 @@ export const QuantityButtonsBlock: React.FC<ICardButtonsBlock> = ({
       <Button
         label="+"
         status="positive"
+        disabled={disablePlusButton}
         buttonClickHandler={onPlusClick}
         style={{ borderRadius: '25px', height: '100%', aspectRatio: '1/1' }}
       />

@@ -209,3 +209,10 @@ $breakpoints: (
     }
   }
 }
+
+@mixin button-disabled {
+  border: 1px solid lightgray;
+  transition: background-color 0.01s, border 0.01s;
+  background-color: rgb(255 255 255 / 17.2%);
+  cursor: default;
+}

@@ -6,4 +6,5 @@ export interface ICardButtonsBlock {
   remaining: number;
   description?: string;
   price: number;
+  quantity?: number;
 }

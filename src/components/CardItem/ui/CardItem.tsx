@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Button } from '../../Button/ui/Button';
 import { CardButtonsBlock } from '../../CardButtonsBlock';
 import type { ICardItem } from '../types/CardItem';
 
@@ -39,7 +40,16 @@ export const CardItem: React.FC<ICardItem> = ({
             description={description}
           />
         ) : (
-          <h4 className={styles['card__out-of-stock']}>Товара нет в наличии</h4>
+          <Button
+            label="Товара нет в наличии"
+            buttonClickHandler={() => {}}
+            disabled={true}
+            style={{
+              width: '100%',
+              height: '50px',
+              borderRadius: '25px',
+            }}
+          />
         )}
       </article>
     </>
