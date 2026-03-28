@@ -111,13 +111,13 @@ $breakpoints: (
   cursor: pointer;
 
   &:hover {
-    border: 1px solid red;
-    background-color: rgb(253 0 0 / 54.6%);
+    border: 1px solid rgb(63 81 181);
+    background-color: rgb(253 0 0 / 38.2%);
     transform: scale(1.01);
   }
 
   &:active {
-    background-color: rgb(255 35 35);
+    background-color: rgb(255 35 35 / 77.5%);
     transform: scale(0.99);
   }
 
@@ -146,13 +146,13 @@ $breakpoints: (
   cursor: pointer;
 
   &:hover {
-    border: 1px solid rgb(169 169 169);
-    background-color: rgb(169 169 169 / 53.4%);
+    border: 1px solid rgb(63 81 181);
+    background-color: rgb(63 81 181 / 37%);
     transform: scale(1.01);
   }
 
   &:active {
-    background-color: rgb(198 198 198);
+    background-color: rgb(63 81 181 / 69.6%);
     transform: scale(0.99);
   }
 
@@ -181,13 +181,13 @@ $breakpoints: (
   cursor: pointer;
 
   &:hover {
-    border: 1px solid green;
-    background-color: rgb(0 128 0 / 51.3%);
+    border: 1px solid rgb(63 81 181);
+    background-color: rgb(0 128 0 / 38.5%);
     transform: scale(1.01);
   }
 
   &:active {
-    background-color: rgb(15 126 15);
+    background-color: rgb(15 126 15 / 77%);
     transform: scale(0.99);
   }
 
