@@ -18,18 +18,23 @@ export const CardItem: React.FC<ICardItem> = ({
     <>
       <article className={styles['card-wrapper']}>
         <div className={styles['card-info']}>
-          <img className={styles['card-image']} src={img} loading="lazy" />
+          <img
+            className={styles['card-image']}
+            src={img}
+            alt={name}
+            loading="lazy"
+          />
           <h3 className={styles['card-header']}>{name}</h3>
           <p className={styles['card-description']}>{description}</p>
         </div>
         <p>{`${price} ₽`}</p>
         {remaining ? (
           <CardButtonsBlock
-            name={name}
             id={id}
-            shopId={shopId}
-            price={price}
             img={img}
+            name={name}
+            price={price}
+            shopId={shopId}
             remaining={remaining}
             description={description}
           />

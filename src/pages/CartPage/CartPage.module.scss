@@ -1,5 +1,9 @@
 @use "../../styles/fonts.scss" as fonts;
 
+.cart-page-wrapper {
+  padding: 40px 0;
+}
+
 .cart-item {
   display: flex;
   flex-direction: row;
@@ -32,6 +36,10 @@
       }
     }
   }
+
+  // &_right-side {
+  //   width: 130px;
+  // }
 }
 
 .cart-is-empty-message {

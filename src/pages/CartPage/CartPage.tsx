@@ -1,4 +1,5 @@
 import { Button } from '../../components/Button/ui/Button';
+import { QuantityButtonsBlock } from '../../components/QuantityButtonsBlock';
 import { useCart } from '../../store';
 
 import styles from './CartPage.module.scss';
@@ -7,10 +8,9 @@ export const CartPage = () => {
   const cart = useCart();
 
   const { items, totalPrice, clearCart } = cart;
-  console.log(items);
 
   return (
-    <>
+    <div className={styles['cart-page-wrapper']}>
       {items.length > 0 && (
         <Button
           label={`К оплате: ${totalPrice} ₽`}
@@ -58,6 +58,7 @@ export const CartPage = () => {
               <div className={styles['cart-item_left-side']}>
                 <img
                   src={item.img}
+                  alt={item.name}
                   className={styles['cart-item_left-side_image']}
                 />
                 <div className={styles['cart-item_left-side_info']}>
@@ -65,7 +66,16 @@ export const CartPage = () => {
                   <p>{`${item.price} ₽`}</p>
                 </div>
               </div>
-              {`${item.quantity} шт.`}
+              <div className={styles['cart-item_right-side']}>
+                <QuantityButtonsBlock
+                  id={item.id}
+                  img={item.img}
+                  name={item.name}
+                  price={item.price}
+                  shopId={item.shopId}
+                  remaining={item.remaining}
+                />
+              </div>
             </div>
           );
         })}
@@ -73,6 +83,6 @@ export const CartPage = () => {
       {items.length === 0 && (
         <h1 className={styles['cart-is-empty-message']}>Корзина пуста</h1>
       )}
-    </>
+    </div>
   );
 };
