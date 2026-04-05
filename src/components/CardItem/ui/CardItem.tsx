@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Button } from '../../Button/ui/Button';
 import { CardButtonsBlock } from '../../CardButtonsBlock';
 import type { ICardItem } from '../types/CardItem';
 
@@ -18,23 +19,37 @@ export const CardItem: React.FC<ICardItem> = ({
     <>
       <article className={styles['card-wrapper']}>
         <div className={styles['card-info']}>
-          <img className={styles['card-image']} src={img} loading="lazy" />
+          <img
+            className={styles['card-image']}
+            src={img}
+            alt={name}
+            loading="lazy"
+          />
           <h3 className={styles['card-header']}>{name}</h3>
           <p className={styles['card-description']}>{description}</p>
         </div>
         <p>{`${price} ₽`}</p>
         {remaining ? (
           <CardButtonsBlock
-            name={name}
             id={id}
-            shopId={shopId}
-            price={price}
             img={img}
+            name={name}
+            price={price}
+            shopId={shopId}
             remaining={remaining}
             description={description}
           />
         ) : (
-          <h4 className={styles['card__out-of-stock']}>Товара нет в наличии</h4>
+          <Button
+            label="Товара нет в наличии"
+            buttonClickHandler={() => {}}
+            disabled={true}
+            style={{
+              width: '100%',
+              height: '50px',
+              borderRadius: '25px',
+            }}
+          />
         )}
       </article>
     </>

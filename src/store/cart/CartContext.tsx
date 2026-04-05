@@ -28,6 +28,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     });
   }, []);
 
+  const getQuantity = useCallback(
+    (itemId: number) => {
+      const currentItem = items.find((item) => item.id === itemId);
+      return currentItem?.quantity;
+    },
+    [items]
+  );
+
   const removeOneFromCart = useCallback(
     (newItem: Omit<CartItem, 'quantity'>) => {
       setItems((prev) => {
@@ -69,6 +77,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     setItems([]);
   }, []);
 
+  // Проверка, есть ли уже товар в корзине
+  //todo: разобрать ошибку TS
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const searchItemInCart = (itemId: number) => {
+    return items.find((item) => item.id === itemId);
+  };
+
   const totalItems = useMemo(() => {
     return items.reduce((sum, item) => sum + item.quantity, 0);
   }, [items]);
@@ -84,19 +99,23 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
       totalPrice,
       addToCart,
       clearCart,
+      getQuantity,
       updateQuantity,
       removeFromCart,
       removeOneFromCart,
+      searchItemInCart,
     }),
     [
       items,
       totalItems,
       totalPrice,
+      getQuantity,
       addToCart,
       clearCart,
       updateQuantity,
       removeFromCart,
       removeOneFromCart,
+      searchItemInCart,
     ]
   );
 

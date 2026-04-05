@@ -1,4 +1,8 @@
-@use "../../styles/fonts.scss" as fonts;
+@use "../../../styles/fonts.scss" as fonts;
+
+.cart-page-wrapper {
+  padding: 40px 0;
+}
 
 .cart-item {
   display: flex;
@@ -37,6 +41,7 @@
 .cart-is-empty-message {
   display: flex;
   justify-content: center;
+  font-weight: 800;
 
   @include fonts.empty-content-message;
 }

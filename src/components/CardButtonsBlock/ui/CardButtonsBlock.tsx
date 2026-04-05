@@ -1,30 +1,23 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 // import minusIcon from '../../../assets/minus.svg';
 // import plusIcon from '../../../assets/plus.svg';
 import { useCart } from '../../../store';
 import { Button } from '../../Button/ui/Button';
+import { QuantityButtonsBlock } from '../../QuantityButtonsBlock/ui/QuantityButtonsBlock';
 import type { ICardButtonsBlock } from '../types/CardButtonsBlock';
 
 import styles from './CardButtonsBlock.module.scss';
 
 export const CardButtonsBlock: React.FC<ICardButtonsBlock> = ({
-  name,
   id,
-  shopId,
-  price,
   img,
+  name,
+  price,
+  shopId,
   remaining,
 }) => {
-  const { addToCart, removeOneFromCart, removeFromCart, items } = useCart();
-
-  const getQuantity = useCallback(
-    (itemId: number) => {
-      const currentItem = items.find((item) => item.id === itemId);
-      return currentItem?.quantity;
-    },
-    [items]
-  );
+  const { addToCart, removeFromCart, items, getQuantity } = useCart();
 
   const handleAddToCart = () => {
     addToCart({ id, shopId, name, price, img, remaining });
@@ -35,16 +28,7 @@ export const CardButtonsBlock: React.FC<ICardButtonsBlock> = ({
     return items.find((item) => item.id === itemId);
   };
 
-  // Обработчик нажатия на +
-  const onPlusClick = () => {
-    handleAddToCart();
-  };
-
-  // Обработчик нажатия на -
-  const onMinusClick = () => {
-    removeOneFromCart({ id, shopId, name, price, img, remaining });
-  };
-
+  //todo: вынести в кастомный хук
   useEffect(() => {
     if (getQuantity(id) === 0) {
       removeFromCart(id);
@@ -67,21 +51,14 @@ export const CardButtonsBlock: React.FC<ICardButtonsBlock> = ({
       )}
 
       {searchItemInCart(id) && getQuantity(id) !== 0 && (
-        <div className={styles['buttons-block']}>
-          <Button
-            label="-"
-            status="negative"
-            buttonClickHandler={onMinusClick}
-            style={{ borderRadius: '25px' }}
-          />
-          <>{getQuantity(id)}</>
-          <Button
-            label="+"
-            status="positive"
-            buttonClickHandler={onPlusClick}
-            style={{ borderRadius: '25px' }}
-          />
-        </div>
+        <QuantityButtonsBlock
+          id={id}
+          shopId={shopId}
+          name={name}
+          img={img}
+          remaining={remaining}
+          price={price}
+        />
       )}
     </div>
   );
