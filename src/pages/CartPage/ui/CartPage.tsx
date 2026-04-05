@@ -1,6 +1,6 @@
-import { Button } from '../../components/Button/ui/Button';
-import { QuantityButtonsBlock } from '../../components/QuantityButtonsBlock';
-import { useCart } from '../../store';
+import { Button } from '../../../components/Button/ui/Button';
+import { QuantityButtonsBlock } from '../../../components/QuantityButtonsBlock';
+import { useCart } from '../../../store';
 
 import styles from './CartPage.module.scss';
 

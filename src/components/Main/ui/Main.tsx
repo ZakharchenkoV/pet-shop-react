@@ -3,7 +3,7 @@ import type React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { AccountPage } from '../../../pages/AccountPage';
-import { CartPage } from '../../../pages/CartPage/CartPage';
+import { CartPage } from '../../../pages/CartPage';
 import { CatalogPage } from '../../../pages/CatalogPage';
 import { HomePage } from '../../../pages/HomePage';
 
