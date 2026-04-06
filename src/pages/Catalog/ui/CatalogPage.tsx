@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import { CardItems } from '@/pages/Catalog/ui/CardItems/CardItems';
-import { ShopFilter } from '@/pages/Catalog/ui/ShopFilter/ShopFilter';
 import type { ShopItem } from '@/shared/model';
 
 import { cards, shops } from '../mock/Cards';
+
+import { CardItems } from './CardItems/CardItems';
+import { ShopFilter } from './ShopFilter/ShopFilter';
 
 export const CatalogPage = () => {
   const [value, setValue] = useState<ShopItem[]>([]); // выбранные чекбоксы

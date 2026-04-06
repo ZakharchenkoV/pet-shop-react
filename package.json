@@ -12,7 +12,8 @@
     "type-check": "tsc --noEmit",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,css}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,css}\"",
+    "steiger": "steiger src"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
@@ -39,6 +40,7 @@
     "prettier": "^3.8.1",
     "prettier-plugin-css-order": "^2.2.0",
     "sass-embedded": "^1.93.3",
+    "steiger": "^0.5.11",
     "stylelint": "^14.16.1",
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-order": "^5.0.0",

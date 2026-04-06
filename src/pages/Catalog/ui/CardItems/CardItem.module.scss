@@ -1,0 +1,50 @@
+@use "@shared/styles/mixins.scss" as mixins;
+@use "@shared/styles//fonts.scss" as fonts;
+
+.card {
+  &-wrapper {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    border: 1px solid rgb(204 204 204 / 52.6%);
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffffa3;
+
+    @include mixins.block-hover;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-image {
+    width: 100%;
+    border-radius: 20px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+
+  &-description {
+    margin: 0;
+
+    @include fonts.font-description;
+  }
+
+  &__out-of-stock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

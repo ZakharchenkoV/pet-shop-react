@@ -1,0 +1,13 @@
+@use "@shared/styles/mixins.scss" as mixins;
+
+.counter {
+  display: flex;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid rgb(55 53 53 / 28.1%);
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+
+  @include mixins.small-block-hover;
+}

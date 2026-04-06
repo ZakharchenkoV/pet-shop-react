@@ -3,6 +3,16 @@ import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   plugins: [react(), svgr()],
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@app': '/src/app',
+      '@pages': '/src/pages',
+      '@widgets': '/src/widgets',
+      '@features': '/src/features',
+      '@entities': '/src/entities',
+      '@shared': '/src/shared',
+    },
+  },
 });
