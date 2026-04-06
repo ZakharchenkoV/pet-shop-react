@@ -1,3 +1,3 @@
-export type { CartContextType, CartItem } from './types/types';
-export { useCart } from './hooks/useCart';
+export type { CartContextType } from './model/types';
+export { useCart } from './lib/useCart';
 export { CartProvider } from './CartContext';

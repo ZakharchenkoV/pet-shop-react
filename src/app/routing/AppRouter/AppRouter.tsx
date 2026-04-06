@@ -2,10 +2,10 @@ import type React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
-import { AccountPage } from '@/pages/AccountPage';
-import { CartPage } from '@/pages/CartPage';
-import { CatalogPage } from '@/pages/CatalogPage';
-import { HomePage } from '@/pages/HomePage';
+import { AccountPage } from '@/pages/Account';
+import { CartPage } from '@/pages/Cart';
+import { CatalogPage } from '@/pages/Catalog';
+import { HomePage } from '@/pages/Home';
 
 import styles from './AppRouter.module.scss';
 

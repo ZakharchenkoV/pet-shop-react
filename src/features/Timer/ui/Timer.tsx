@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { ButtonsBlock } from '@/entities/ButtonsBlock';
+import { ButtonsBlock } from '@/entities/buttons-block';
 
 import styles from './Timer.module.scss';
 

@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
-import { ButtonsBlock } from '@/entities/ButtonsBlock';
+import { ButtonsBlock } from '@/entities/buttons-block';
 
-import type { State } from '../types/ClassCounter';
+import type { State } from '../model/ClassCounter';
 
 import styles from './ClassCounter.module.scss';
 

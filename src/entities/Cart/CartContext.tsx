@@ -1,14 +1,13 @@
-import React, { createContext, useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
-import type { CartContextType, CartItem } from '@/entities/Cart';
+import type { Product } from '@/shared/model';
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const CartContext = createContext<CartContextType | undefined>(undefined);
+import { CartContext } from './lib/CartContext';
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<Product[]>([]);
 
-  const addToCart = useCallback((newItem: Omit<CartItem, 'quantity'>) => {
+  const addToCart = useCallback((newItem: Omit<Product, 'quantity'>) => {
     setItems((prev) => {
       const existing = prev.find((el) => el.id === newItem.id);
 
@@ -30,7 +29,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     [items]
   );
 
-  const removeOneFromCart = useCallback((newItem: Omit<CartItem, 'quantity'>) => {
+  const removeOneFromCart = useCallback((newItem: Omit<Product, 'quantity'>) => {
     setItems((prev) => {
       const existing = prev.find((el) => el.id === newItem.id);
 
