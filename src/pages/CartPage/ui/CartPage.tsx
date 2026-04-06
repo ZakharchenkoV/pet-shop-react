@@ -1,6 +1,6 @@
-import { Button } from '../../../components/Button/ui/Button';
-import { QuantityButtonsBlock } from '../../../components/QuantityButtonsBlock';
-import { useCart } from '../../../store';
+import { useCart } from '@/entities/Cart';
+import { QuantityButtonsBlock } from '@/features/QuantityButtonsBlock';
+import { Button } from '@/shared/Button';
 
 import styles from './CartPage.module.scss';
 
@@ -80,9 +80,7 @@ export const CartPage = () => {
           );
         })}
 
-      {items.length === 0 && (
-        <h1 className={styles['cart-is-empty-message']}>Корзина пуста</h1>
-      )}
+      {items.length === 0 && <h1 className={styles['cart-is-empty-message']}>Корзина пуста</h1>}
     </div>
   );
 };

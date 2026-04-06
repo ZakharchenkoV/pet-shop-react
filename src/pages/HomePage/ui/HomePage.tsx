@@ -1,5 +1,5 @@
-import { ClassCounter } from '../../../components/ClassCounter';
-import { Timer } from '../../../components/Timer';
+import { ClassCounter } from '@/features/ClassCounter';
+import { Timer } from '@/features/Timer';
 
 import styles from './HomePage.module.scss';
 
