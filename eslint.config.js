@@ -33,14 +33,14 @@ export default tseslint.config(
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: ['./tsconfig.app.json', './tsconfig.node.json'],
+        project: ['./tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
     },
     settings: {
       'import/resolver': {
         typescript: {
-          project: ['./tsconfig.app.json', './tsconfig.node.json'],
+          project: ['./tsconfig.app.json'],
         },
         node: true,
       },
@@ -49,14 +49,7 @@ export default tseslint.config(
       'import/order': [
         'error',
         {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            'parent',
-            'sibling',
-            'index',
-          ],
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
           pathGroups: [
             {
               pattern: 'react',
@@ -90,17 +83,11 @@ export default tseslint.config(
       },
     },
     rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
       'import/order': [
         'error',
         {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            'parent',
-            'sibling',
-            'index',
-          ],
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
           pathGroups: [
             {
               pattern: 'react',
