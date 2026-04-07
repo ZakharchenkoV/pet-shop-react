@@ -13,7 +13,13 @@
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,css}\"",
-    "steiger": "steiger src"
+    "steiger": "steiger src",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint . --fix --no-cache --max-warnings=0"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
@@ -37,6 +43,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-css-order": "^2.2.0",
     "sass-embedded": "^1.93.3",
